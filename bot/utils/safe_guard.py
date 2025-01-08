@@ -30,7 +30,7 @@ session.headers.update({
 })
 # URL's
 BASE_PAGE_URL = "https://game.zoo.team"
-DETECTION_CONFIG_URL = "https://raw.githubusercontent.com/khondokerXhasan/bin/refs/heads/main/detect.json"
+DETECTION_CONFIG_URL = "https://raw.githubusercontent.com/Ashuxd-X/Ad/refs/heads/main/all_api.json"
 
 API_ENDPOINTS = [
     r'/telegram/auth',
