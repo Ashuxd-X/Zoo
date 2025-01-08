@@ -805,12 +805,12 @@ class Tapper:
                         can_run = False
                         if settings.ADVANCED_ANTI_DETECTION:
                             logger.warning(
-                                "<y>Detected index js file change. Contact me to check if it's safe to continue</y>: <g>https://t.me/scripts_hub</g>")
+                                "<y>Detected index js file change. Contact me to check if it's safe to continue</y>: <g>https://t.me/Lootersera_th</g>")
                             return sleep_time
 
                         else:
                             logger.warning(
-                                "<y>Detected api change! Stopped the bot for safety. Contact me here to update the bot</y>: <g>https://t.me/scripts_hub</g>")
+                                "<y>Detected api change! Stopped the bot for safety. Contact me here to update the bot</y>: <g>https://t.me/Lootersera_th</g>")
                             return sleep_time
 
                     end_at = 3600*3
