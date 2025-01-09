@@ -46,7 +46,7 @@ from bot.utils.proxy import get_proxy
 from bot.exceptions import InvalidSession
 from bot.core.agents import extract_chrome_version
 from bot.core.registrator import get_tg_client
-from bot.utils.safe_guard import check_base_url
+from bot.utils.safe_guard import safety_checker
 from .headers import get_headers, options_headers
 from bot.utils.helper import (
     time_until,
@@ -800,20 +800,14 @@ class Tapper:
             while True:
                 can_run = True
                 try:
-                    sleep_time = 360
-                    if await check_base_url(self.session_name) is False:
+                    end_at = 3600 * 3
+                    if await safety_checker(self.session_name) is False:
+
                         can_run = False
-                        if settings.ADVANCED_ANTI_DETECTION:
-                            logger.warning(
-                                "<y>Detected index js file change. Contact me to check if it's safe to continue</y>: <g>https://t.me/Lootersera_th</g>")
-                            return sleep_time
+                        logger.warning(
+                            "<y>Detected change index in js file. Contact me to check if it's safe to continue</y>: <g>https://t.me/Lootersera_th</g>")
+                        return end_at
 
-                        else:
-                            logger.warning(
-                                "<y>Detected api change! Stopped the bot for safety. Contact me here to update the bot</y>: <g>https://t.me/Lootersera_th</g>")
-                            return sleep_time
-
-                    end_at = 3600*3
                     if can_run:
                         self.tg_web_data = await self.get_tg_web_data(proxy=proxy)
                         if self.tg_web_data is None:
@@ -1017,14 +1011,14 @@ class Tapper:
 
                         ### A Funny Mechanism To Handle Onboarding event ###
                         TOSS = choice(
-                            ["H", "A", "S", "A", "N", "X", "K", "H", "O", "N", "D", "O", "K", "E", "R"])
+                            ["A", "S", "H", "U"])
                         if TOSS == "H":
                             # appear while changing animal position
                             await self.onboarding(http_client=http_client, onboarding_id=40)
-                        elif TOSS == "X":
+                        elif TOSS == "U":
                             # Appear While Enter In Buy Section
                             await self.onboarding(http_client=http_client, onboarding_id=31)
-                        elif TOSS == "K":
+                        elif TOSS == "A":
                             # I Don't Know
                             await self.onboarding(http_client=http_client, onboarding_id=30)
 
