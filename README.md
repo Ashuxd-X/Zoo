@@ -65,8 +65,8 @@ Ensure you have **Python 3.10 or Greater** installed.
  
 ### Clone the Repository
 ```shell
-git clone https://github.com/khondokerXhasan/Zoo-BOT
-cd Zoo-BOT
+git clone https://github.com/Ashuxd-X/Zoo
+cd Zoo
 ```
  
 Then you can do automatic installation by typing:
